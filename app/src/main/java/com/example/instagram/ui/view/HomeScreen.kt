@@ -11,7 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 @Composable
 fun HomeScreen() {
 
-    Column (modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme)) {
+    Column (modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)) {
 
         InstagramToolBar()
     }

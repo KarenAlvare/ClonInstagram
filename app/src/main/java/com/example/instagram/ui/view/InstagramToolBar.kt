@@ -1,47 +1,65 @@
 package com.example.instagram.ui.view
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.instagram.R
+import com.example.instagram.ui.theme.spacingLarge
+import com.example.instagram.ui.theme.spacingMedium
 
 @Composable
 fun InstagramToolBar() {
-    Row (modifier = Modifier
-        .padding(horizontal = 16.dp)
-        .height(56.dp)
-        .fillMaxWidth()
-    ){
 
-        Text(text = "Instagram", fontSize = 32.sp, modifier = Modifier.weight(1f))
+    val instagramLabel = stringResource(id = R.string.app_name)
 
-        Image(
-            painter = painterResource(id = R.drawable.ic_notification),
-            modifier = Modifier
-                .size(32.dp)
-                .padding(end = 8.dp)
-                .align(Alignment.CenterVertically),
-            contentDescription = "Icono de notificación de barra de herramientas.")
+    Box(modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)){
+        Row (modifier = Modifier
+            .padding(horizontal = spacingLarge)
+            .height(56.dp)
+        ){
 
-        Image(
-            painter = painterResource(id = R.drawable.ic_message),
-            modifier = Modifier
-                .size(32.dp)
-                .padding(start = 8.dp)
-                .align(Alignment.CenterVertically),
-            contentDescription = "Icono de mensajes directos (DM) de la barra de herramientas.")
+            Text(
+                text = stringResource(id = R.string.app_name),
+                modifier = Modifier.weight(1f),
+                style = MaterialTheme.typography.headlineLarge
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.ic_notification),
+                modifier = Modifier
+                    .size(32.dp)
+                    .padding(end = spacingMedium)
+                    .align(Alignment.CenterVertically),
+                contentDescription = stringResource(R.string.content_description_notification_icon)
+            )
+
+            Image(
+                painter = painterResource(id = R.drawable.ic_message),
+                modifier = Modifier
+                    .size(32.dp)
+                    .padding(start = spacingMedium)
+                    .align(Alignment.CenterVertically),
+                contentDescription = stringResource(R.string.content_description_message_icon)
+            )
+        }
+
     }
+
 }
 
 @Preview(showBackground = true)
