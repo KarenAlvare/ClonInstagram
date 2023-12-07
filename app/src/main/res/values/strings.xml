@@ -2,4 +2,5 @@
     <string name="app_name">Instagram</string>
     <string name="content_description_notification_icon">ícono de notificación de barra de herramientas.</string>
     <string name="content_description_message_icon">Icono de mensajes directos (DM) de la barra de herramientas.</string>
+    <string name="content_description_story" formatted="true">Storie de %s nao visualizado. </string>
 </resources>
