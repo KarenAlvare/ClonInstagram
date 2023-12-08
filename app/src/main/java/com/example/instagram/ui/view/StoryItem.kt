@@ -32,7 +32,8 @@ import com.example.instagram.ui.theme.spacingSmall
 @Composable
 fun StoryItem(story:Story) {
 
-    val avatarContentDec = stringResource(id = R.string.content_description_story, story.userNickname)
+    val avatarContentDesc =
+        stringResource(id = R.string.content_description_story, story.userNickname)
 
     Column(modifier = Modifier
         .padding(spacingSmall)
@@ -40,7 +41,7 @@ fun StoryItem(story:Story) {
     ) {
         GlideImage(
             model = story.userAvatar,
-            contentDescription = avatarContentDec,
+            contentDescription = avatarContentDesc,
             modifier = Modifier
                 .size(64.dp)
                 .align(Alignment.CenterHorizontally)
