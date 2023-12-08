@@ -1,4 +1,4 @@
-package com.example.instagram.data
+package com.example.instagram.data.model
 
 import android.provider.ContactsContract.CommonDataKinds.Nickname
 

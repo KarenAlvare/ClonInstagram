@@ -5,11 +5,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.instagram.data.Story
+import androidx.compose.ui.unit.dp
+import com.example.instagram.data.model.Story
+import com.example.instagram.data.repository.stories
+import com.example.instagram.ui.theme.DividerColor
 
 @Composable
 fun HomeScreen() {
@@ -20,21 +25,9 @@ fun HomeScreen() {
 
         InstagramToolBar()
 
-        val stories = listOf(
-            Story(userNickname = "Janedoe", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickname = "Mariel", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickname = "Karen", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickname = "Erick", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickname = "Jesus", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickname = "Isa", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickname = "Alvaro", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickname = "doe", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickname = "Janedoe_Janedoe", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickname = "Jan", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-
-        )
-        
         StoryList(stories = stories)
+
+        Divider(color = DividerColor, thickness = 0.2.dp)
     }
 }
 
