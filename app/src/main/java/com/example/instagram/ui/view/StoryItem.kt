@@ -24,6 +24,7 @@ import com.bumptech.glide.integration.compose.GlideImage
 import com.example.instagram.R
 import com.example.instagram.data.model.Story
 import com.example.instagram.data.repository.stories
+import com.example.instagram.ui.theme.InstagramTheme
 import com.example.instagram.ui.theme.StoryCircleColor
 import com.example.instagram.ui.theme.spacingSmall
 
@@ -32,11 +33,12 @@ import com.example.instagram.ui.theme.spacingSmall
 fun StoryItem(story: Story) {
 
     val avatarContentDesc =
-        stringResource(id = R.string.content_description_story, story.userNickname)
+        stringResource(id = R.string.content_description_story, story.userNickName)
 
-    Column(modifier = Modifier
-        .padding(spacingSmall)
-        .background(MaterialTheme.colorScheme.background)
+    Column(
+        modifier = Modifier
+            .padding(spacingSmall)
+            .background(MaterialTheme.colorScheme.background)
     ) {
         GlideImage(
             model = story.userAvatar,
@@ -49,20 +51,27 @@ fun StoryItem(story: Story) {
                 .border(2.dp, StoryCircleColor, CircleShape),
             contentScale = ContentScale.Crop
         )
-        
+
         Text(
-            text = story.userNickname,
+            text = story.userNickName,
             modifier = Modifier.size(width = 72.dp, height = 24.dp),
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
             textAlign = TextAlign.Center
-
         )
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
-fun StoryItemPreview(){
+fun StoryItemPreview() {
     StoryItem(story = stories[0])
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DarkStoryItemPreview() {
+    InstagramTheme(darkTheme = true) {
+        StoryItem(story = stories[0])
+    }
 }

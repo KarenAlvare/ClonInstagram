@@ -1,8 +1,6 @@
 package com.example.instagram.data.model
 
-import android.provider.ContactsContract.CommonDataKinds.Nickname
-
-class Story (
-    val userNickname: String,
+class Story(
+    val userNickName: String,
     val userAvatar: String
 )
